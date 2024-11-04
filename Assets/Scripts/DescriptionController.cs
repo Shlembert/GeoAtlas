@@ -13,7 +13,6 @@ public class DescriptionController : MonoBehaviour
 
     private PinController _currentPin;
     private string _detailsDescription;
-    
 
     public TMP_Text NamePin { get => namePin; set => namePin = value; }
     public TMP_Text Description { get => description; set => description = value; }
