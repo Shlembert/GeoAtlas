@@ -59,14 +59,7 @@ public class PinService : MonoBehaviour
 
     public void SavePins()
     {
-        if (_pins.Count > 0)
-        {
-            pinSaveLoadService.SavePinsToJson(_pins);
-        }
-        else
-        {
-            Debug.Log("Список пинов пуст!");
-        }
+        pinSaveLoadService.SavePinsToJson(_pins);
     }
 
     private void SetPinContent(PinData pinData)
