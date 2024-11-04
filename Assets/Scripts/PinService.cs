@@ -25,9 +25,12 @@ public class PinService : MonoBehaviour
 
     public async void CreatePin()
     {
+        Vector3 position = touchController.ClickPosition;
+
         if (_isEdit && _currentPinController)
         {
             _pins.Remove(_currentPinController.PinData);
+            _currentPinController.PinData.coordinates = position;
             SetPinContent(_currentPinController.PinData);
             _pins.Add(_currentPinController.PinData);
             _isEdit = false;
@@ -35,7 +38,7 @@ public class PinService : MonoBehaviour
         }
         else
         {
-            Vector3 position = touchController.ClickPosition;
+            
             GameObject pin = Instantiate(pinPrefab, _transform.position, Quaternion.identity);
             pin.transform.SetParent(_transform, false);
             pin.transform.position = position;
