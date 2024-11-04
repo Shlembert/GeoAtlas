@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PinSaveLoadService : MonoBehaviour
 {
-    private const string SavePath = "D:/Project/GeoAtlas/Assets/SaveData/pins.json";
+    private static readonly string SavePath = $"{Application.dataPath}/SaveData/pins.json";
 
     [System.Serializable]
     private class PinDataListWrapper
